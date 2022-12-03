@@ -1,0 +1,15 @@
+version: "3.5"
+
+services:
+  mariadb:
+    container_name: jdrwriter-db
+    image: mariadb
+    environment:
+      MARIADB_ROOT_PASSWORD: "root123"
+      MYSQL_PASSWORD: "mariadb123"
+      MYSQL_USER: "jdrwriter-local"
+      MYSQL_DATABASE: "jdrwriter"
+    ports:
+      - '3306:3306'
+    volumes:
+      - ${PWD}/mariadb/:/var/lib/mysql/
